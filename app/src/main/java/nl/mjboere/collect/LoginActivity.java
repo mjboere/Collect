@@ -3,6 +3,7 @@ package nl.mjboere.collect;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
@@ -195,10 +196,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (mAuthTask.loginCorrect) {
                 Log.d("LOGINACT", "ATTEMPTLOGIN DONE");
+
             }else{
                 Log.d("LOGINACT", "ATTEMPTLOGIN FALSE");
             }
-
+            startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
 
         }
     }
